@@ -1,0 +1,44 @@
+
+<html>
+
+<body>
+	<p>dich tu : Hello</p>
+	<select id="sss">
+		<option value="a">vietnam</option>
+		<option value="b">Orange</option>
+		<option value="c">Pineapple</option>
+		<option value="d">Banana</option>
+		<option value="e">Apple</option>
+	</select>
+
+	<button onclick="test()">dich</button>
+
+	<script>
+			function test() {
+	
+x= document.getElementById("sss").children[document.getElementById("sss").selectedIndex].value;
+switch (x) {
+	case "a":
+		document.write("xinchao");
+		break;
+	case "b":
+		document.write("xiinchaao Orange");
+		break;
+	case "c":
+		document.write("xxincchao Pineapple");
+		break;
+	case "d":
+		document.write("xinncchao Banana");
+		break;
+	default:
+		document.write("xinchao Apple");
+		break;
+}
+
+}
+
+
+</script>
+
+</body>
+</html>
