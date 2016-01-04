@@ -1,0 +1,26 @@
+<script type="text/javascript">
+function Scroll(){
+	var top = document.getElementById('menu');
+	var ypos = window.pageYOffset;
+	if (ypos > 599) {
+		top.style.opacity = "0";
+	}
+	else {
+		top.style.opacity = "1";
+	}
+}
+    window.addEventListener("scroll",Scroll);
+</script>
+
+onchange or checeked
+this.value
+new value  and  old value
+input hidden
+
+window.pageYOffset : gia tri scroll dang keo xuong vi tri do
+tuong duong:
+ff,ie:  document.documentElement.scrollTop
+chrome: document.body.scrollTop
+
+ window.pageYOffset || document.documentElement.scrollTop 
+ window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0)

@@ -1,0 +1,183 @@
+
+<script>
+
+
+
+</script>
+
+
+
+
+/*
+//bai 5:
+
+<form method="post" action"">
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="button" onclick="validate(); checkTrueFalse()"/>
+<p id="hhh"></p>
+<input type="button" onclick="kiemtra()"/>
+</form>
+
+<script>
+	//add event 	" 
+	//document.forms[0].elements[3].addEventListener("click",
+	//function (){ return validate(); checkTrueFalse()});
+
+data = [];
+	function validate(){
+	user = document.forms[0].elements[0].value;
+	pass = document.forms[0].elements[1].value;
+	repass = document.forms[0].elements[2].value;
+	
+	if (user == ""){
+		alert ("chua nhap ten?");
+		return false;
+	}
+	if (pass == ""){
+		alert("chua nhap pass?");
+		return false;
+	}
+	if (pass != repass){
+		alert("repass khong dung?");
+		return false;
+	}
+	return true;
+	
+	}
+	function checkTrueFalse() {
+	
+	data = data.concat(validate());
+	document.getElementsByTagName("p")[0].innerHTML = data.valueOf();
+	}
+	function kiemtra(){
+		for (i=0; i< data.length ; i++){
+			if(data[i] == true) {
+			document.write(i);
+			break;
+		}
+		}
+	}
+	
+
+</script>
+	
+//bai3:
+x = 6 ;
+if (x>=0 && x<=10) {
+	if (x >= 0 && x < 3.9) {
+		document.write("diem F");
+		}
+	if (x >= 4 && x < 5.4){
+		document.write("diem D");
+		}
+	if (x >= 5.5 && x < 6.9){
+		document.write("diem c");
+		}
+	if (x >= 7 && x < 8.4){
+		document.write("diem B");
+		}
+	if (x>= 8.5 && x<= 10) {
+		document.write("diem A");
+		}
+}
+
+//bai2:
+string = "tghrtgydrtsdrtgdrtgrtgsdte4t";
+
+if (typeof string == "number") {
+string = string.toString();
+} 
+	if (string.length < 10) {
+	document.write(string);
+	} else {
+	document.write(string.slice(0,10) + "...");
+	}
+	
+//bai 1: date..	
+	//bai1:
+	now = new Date();
+	day = now.getDate();
+	month = now.getMonth() + 1;
+	year = now.getFullYear();
+	document.write(now);
+	if(month <3 ){
+		document.write("xuan, at: " + day +":"+ month +":"+ year);
+	} else if(month >3 && month <6 ){
+		document.write("ha, at: " + day +":"+ month +":"+ year);
+	} else if(month >6 && month <9 ){
+		document.write("thu, at: " + day +":"+ month +":"+ year);
+	} else {
+		document.write("dong, at: " + day +":"+ month +":"+ year);
+	}
+	//bai tap phan if 2
+	
+	
+	
+//bai4 chua lam duoc
+<form name="myform" action="" method="post">
+<input type="text" name="username" id="userID"/>
+<input type="password" name="password" id="pass"/>
+<input type="password" name="confirm" id="confirm"/>
+<input type="button" onclick="checked();" value="xxx"/>
+
+</form>
+
+
+function checked() {
+username = document.getElementById("userID").value.length;
+password = document.getElementById("pass").value.length;
+confirm = document.getElementById("confirm").value.length;
+if (username == 0 || username > 20) {
+		alert("not good");
+	} else {
+		alert("good");
+	}
+	if (password < 6 && password > 32) {
+		alert("not good");
+	} else {
+		alert("good");
+	}
+	if (password == confirm) {
+		alert("good");
+	}
+}
+
+
+//bai3
+arr = [3,5,7,4,6,8,5,8,5,4];
+aa = [];
+for (i=0; i < arr.length ; i++) {
+	if (arr[i] % 2 == 0) {
+		aa.push(arr[i]);
+	}
+}
+aa.sort();
+aa.reverse();
+document.write(aa.valueOf());
+//bai2
+function giaithua(n) {
+	if (typeof n != "number" || n<=0) {
+		alert ("nooooot..");
+	} else {
+		s=1;
+		for (i=1; i<=n; i++) {
+			s*=i;
+		}
+		return "<br/>" + "giai thua cua " + n + " la " + s + "<br/>";
+	}
+}
+document.write(giaithua(4));
+//bai1
+function solon(a,b) {
+	if (typeof a == "number" && typeof b == "number"){
+		if (a > b) {
+			return "so lon nhat la " + a;
+		}
+		else return "so lon nhat la " + b;
+	}
+}
+document.write(solon(3,6));
+
+*/

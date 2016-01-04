@@ -1,0 +1,31 @@
+<html><head></head>
+<body>
+
+
+<div>
+<input id="a1" type="text" value="2">
+<input id="a2" type="text" value="1">
+<input id="a3" type="text" value="6">
+<input id="b1" type="button" value="show" onclick="show()">
+<input id="b2" type="text">
+
+</div>
+<script>
+function show() {
+so1 = document.getElementById("a1").value;
+so2 = document.getElementById("a2").value;
+so3 = document.getElementById("a3").value;
+if (so1 >= so2 && so1 >= so3) {
+	so4 = so1;
+	}
+	else if (so2 >= so1 && so2 >= so3) {
+	so4 = so2;
+	}
+else {
+	so4 = so3;
+	}
+document.getElementById("b2").value = so4;
+}
+
+</script>
+</body></html>

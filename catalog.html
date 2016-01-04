@@ -1,0 +1,96 @@
+<style>button {width: 33px;}</style>
+
+<input type="text" id="text"><br/>
+<button onclick="reset()">AC</button>
+<button onclick="hienthi(this.innerHTML)">+/-</button>
+<button onclick="mod()">%</button>
+<button onclick="div()" style="background-color:orange">/</button><br/>
+
+<button onclick="hienthi(this.innerHTML)">1</button>
+<button onclick="hienthi(this.innerHTML)">2</button>
+<button onclick="hienthi(this.innerHTML)">3</button>
+<button onclick="mul()" style="background-color:orange">x</button><br/>
+
+<button onclick="hienthi(this.innerHTML)">4</button>
+<button onclick="hienthi(this.innerHTML)">5</button>
+<button onclick="hienthi(this.innerHTML)">6</button>
+<button onclick="sub()" style="background-color:orange">-</button><br/>
+
+<button onclick="hienthi(this.innerHTML)">7</button>
+<button onclick="hienthi(this.innerHTML)">8</button>
+<button onclick="hienthi(this.innerHTML)">9</button>
+<button onclick="add()" style="background-color:orange">+</button><br/>
+
+<button onclick="hienthi(this.innerHTML)" style="width:70px">0</button>
+<button>.</button>
+<button onclick="ketqua()" style="background-color:orange">=</button><br/>
+<input type="hidden" id="hidden1"><input type="hidden" id="hidden2">
+<script>
+function reset(){
+	document.getElementById("text").value = "";
+}
+function ketqua(){
+if (document.getElementById("hidden2").value == "+"){
+	document.getElementById("text").value = 
+	+document.getElementById("text").value 
+		+ 
+	+document.getElementById("hidden1").value
+}
+if (document.getElementById("hidden2").value == "-"){
+	document.getElementById("text").value = 
+	+document.getElementById("hidden1").value
+		-
+	+document.getElementById("text").value
+}
+if (document.getElementById("hidden2").value == "*"){
+	document.getElementById("text").value = 
+	+document.getElementById("text").value 
+		*
+	+document.getElementById("hidden1").value;
+}
+if (document.getElementById("hidden2").value == "/"){
+	document.getElementById("text").value = 
+	+document.getElementById("hidden1").value
+		/
+	+document.getElementById("text").value
+}
+if (document.getElementById("hidden2").value == "%"){
+	document.getElementById("text").value = 
+	+document.getElementById("hidden1").value
+		%
+	+document.getElementById("text").value
+}
+}
+function add(){
+	document.getElementById("hidden1").value = document.getElementById("text").value;
+	document.getElementById("text").value = "";
+	document.getElementById("hidden2").value = "+";
+}
+function sub(){
+	document.getElementById("hidden1").value = document.getElementById("text").value;
+	document.getElementById("text").value = "";
+	document.getElementById("hidden2").value = "-";
+}
+function mul(){
+	document.getElementById("hidden1").value = document.getElementById("text").value;
+	document.getElementById("text").value = "";
+	document.getElementById("hidden2").value = "*";
+}
+function div(){
+	document.getElementById("hidden1").value = document.getElementById("text").value;
+	document.getElementById("text").value = "";
+	document.getElementById("hidden2").value = "/";
+}
+function mod(){
+	document.getElementById("hidden1").value = document.getElementById("text").value;
+	document.getElementById("text").value = "";
+	document.getElementById("hidden2").value = "%";
+}
+
+function hienthi(x){
+	document.getElementById("text").value = x;
+}
+function set(z){
+	document.getElementById("text").value = z;
+}
+</script>

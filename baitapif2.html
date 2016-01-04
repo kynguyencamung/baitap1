@@ -1,0 +1,37 @@
+<body>
+<p id="a"> bai tap dom </p>
+<p id="b"> bai tap document object model </p>
+<p id="c"> bai tap document object model 2</p>
+
+<p id="changefontsize" onclick="changefontsize()">changefontsize</p>
+<p id="upfontsize" onclick="upfontsize()">upfontsize</p>
+<p id="downfontsize">downfontsize</p>
+<p id="changecolor" onclick="changecolor()">changecolor</p>
+<p id="changebg" onclick="changebg()">changebg</p>
+<p id="copypate" onclick="copypate()">copypate</p>
+
+<script>
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+function changefontsize(){
+	a.style.fontSize = "30px";
+}
+//chua lam duoc phan nay
+function upfontsize(){
+	a.style.fontSize = a.style.fontSize + "110%";
+}
+//
+function changecolor(){
+	a.style.color = "blue";
+	b.style.color = "yellow";
+	c.style.color = "red";
+}
+function changebg(){
+	document.body.style.backgroundColor = "green";
+}
+function copypate(){
+	a.innerHTML = b.innerHTML;
+}
+</script>
+</body>

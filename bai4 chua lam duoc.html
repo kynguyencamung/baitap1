@@ -1,0 +1,32 @@
+
+<input type="text" name="username" id="userID"/>
+<input type="password" name="password" id="pass"/>
+<input type="password" name="confirm" id="confirm"/>
+<input type="button" onclick="checkedd()" value="xxx"/>
+
+<div id="mess"></div>
+<script>
+
+function checkedd() {
+username = document.getElementById("userID").value.length;
+password = document.getElementById("pass").value.length;
+confirm = document.getElementById("confirm").value.length;
+
+mess = document.getElementById("mess");
+
+if (username == 0 || username > 20) {
+		alert("not good");
+	} else {
+		alert("good");
+	}
+	if (password < 6 && password > 32) {
+		alert("not good");
+	} else {
+		alert("good");
+	}
+	if (password == confirm) {
+		alert("giong pass");
+	}
+}
+
+</script>

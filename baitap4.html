@@ -1,0 +1,81 @@
+
+<meta charset="utf-8" />
+
+<script>
+
+
+
+
+function person(firstname, lastname, age) {
+	this.firstName = firstname;
+	this.lastName = lastname;
+	this.age = age;
+	this.say = aboutMe	
+}
+function aboutMe() {
+	document.write("xin chao, toi la " + this.firstName + this.lastName + " nam nay toi " + this.age + "<br/>");
+}
+
+var teacher = new person('aaa', 'bbb', 23);
+var student = new person('ddd', 'uuu', 24);
+var parent = new person('www', 'eee', 27);
+
+teacher.say = aboutMe;
+student.say = aboutMe;
+parent.say = aboutMe;
+teacher.say();
+student.say();
+parent.say();
+/* bai7 cach 1:
+//cach 2
+var teacher = {
+	firstName: "kim",
+	lastName: "dung",
+	age: 30,
+	say: function() {}
+}
+var student = {
+	firstName: "kimm",
+	lastName: "dungm",
+	age: 32,
+	say: function() {}
+}
+var parent = {
+	firstName: "kimss",
+	lastName: "dungsss",
+	age: 304,
+	say: function() {}
+}
+var aboutMe = function() {
+	document.write("xin chao, toi la " + this.firstName + this.lastName + " nam nay toi " + this.age + "<br/>");
+}
+
+teacher.say = aboutMe;
+student.say = aboutMe;
+parent.say = aboutMe;
+teacher.say();
+student.say();
+parent.say();
+
+
+//bai6
+data = ["g","iv","w"];
+data.sort();
+document.write(data);
+
+//bai5
+data = [2,5,7,89,4,3,1]
+data = data.sort().slice(0,1);
+document.write(data);
+
+//bai4 co 2 cach
+<p>demo trong video viết trực tiếp.</p>
+
+ss1 = document.getElementsByTagName('p');
+ss1[0].innerHTML = ss1[0].innerHTML.charAt(0).toUpperCase() + ss1[0].innerHTML.slice(1);
+
+//cach 2
+//ss1[0].innerHTML = ss1[0].innerHTML.slice(0,1).toUpperCase() + ss1[0].innerHTML.slice(1);
+*/
+
+</script>
