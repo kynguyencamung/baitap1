@@ -1,0 +1,37 @@
+<html>
+	<head></head>
+	<body>
+		<p id="a1" style="font-size: 14px">pppppp</p>
+		<p id="a2">oooooo</p>
+		<button onclick="tang()">tang font</button>
+		<button onclick="giam()">giam font</button>
+		<button onclick="color1()">doi mau</button>
+		<button onclick="copy1()">doi mau</button>
+		<script type="text/javascript">
+			function tang(){
+				if (document.getElementById("a1").style.fontSize >= "30px") {
+					alert("to qua");
+				}
+				else {
+					document.getElementById("a1").style.fontSize = (parseInt(document.getElementById("a1").style.fontSize) + 1) + "px";
+				}
+			}
+			function giam(){
+				if (document.getElementById("a1").style.fontSize <= "10px") {
+					alert("nho qua");
+				}
+				else {
+				document.getElementById("a1").style.fontSize = (parseInt(
+					document.getElementById("a1").style.fontSize) - 1) + "px";
+				}
+			}
+			function color1(){
+				document.getElementById("a2").style.color = "red";
+				document.getElementById("a2").style.backgroundColor = "green";
+			}
+			function copy1(){
+				document.getElementById("a2").innerText = document.getElementById("a1").innerText;
+			}
+		</script>
+	</body>
+</html>
