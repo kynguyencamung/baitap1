@@ -1,39 +1,55 @@
 <html>
 <head>
 <style>
-#content{
-	width:1500px;
-	height:500px;
-	background: #DCE7DC;
-}
-.grid{
-	float: left;
-	width: 150px;
-	height: 210px;
-	margin: 15px;
-	border:1px solid red;
-}
-.card{
-	position: relative;
-}
-img{
-max-width:150px;
-}
-.card .back{
-	width: 200px;
-	transform: rotateY(180deg);
-	position: absolute; top: 0; left: 0;
-}
-
-.card .front, .card .back{
-	transition: all 0.7s;
-	backface-visibility: hidden;
-}
+#content{width:1500px;height:1000px;background: #DCE7DC;}
+.grid{float: left;width: 150px;height: 210px;margin: 15px;border:1px solid red;}
+.card{position: relative;}
+img{max-width:150px;}
+.card .back{width: 200px;transform: rotateY(180deg);position: absolute; top: 0; left: 0;}
+.card .front, .card .back{transition: all 0.7s;backface-visibility: hidden;}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>$(document).ready(function(){
+	var gridAnh = '<div class="grid"><div class="card" ><div class="front"><img src=""/></div><div class="back"><img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/></div></div></div>';
 
+	var dataAnh = [];
+	dataAnh[0] = "http://www.mypokecard.com/en/Gallery/my/galery/6rEiCK7P0ikT.jpg";
+	dataAnh[1] = "http://www.mypokecard.com/en/Gallery/my/galery/9nwlgRLFYN6u.jpg";
+	dataAnh[2] = "http://www.mypokecard.com/en/Gallery/my/galery/mi4uTMDH6F.jpg";
+	dataAnh[3] = "http://www.mypokecard.com/en/Gallery/my/galery/xSn8uGJNUc.jpg";
+	dataAnh[4] = "http://www.mypokecard.com/en/Gallery/my/galery/xo8vuqQXvJAV.jpg";
+	dataAnh[5] = "http://www.mypokecard.com/en/Gallery/my/galery/23BNFHwL3rgd.jpg";
+	dataAnh[6] = "http://www.mypokecard.com/en/Gallery/my/galery/te2qRdAjAH69.jpg";
+	dataAnh[7] = "http://www.mypokecard.com/en/Gallery/my/galery/GYpfAhdGw7A.jpg";
+	dataAnh[8] = "http://www.mypokecard.com/en/Gallery/my/galery/OzFwWS0OjUvY.jpg";
+	dataAnh[9] = "http://www.mypokecard.com/en/Gallery/my/galery/p9P56mUPzqX.jpg";
+	dataAnh[10] = "http://www.mypokecard.com/en/Gallery/my/galery/8LMihSjOH5nn.jpg";
+	dataAnh[11] = "http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwc5.jpg";
+	dataAnh[12] = "http://www.mypokecard.com/en/Gallery/my/galery/xFIklBVQO7Xv.jpg";
+	dataAnh[13] = "http://www.mypokecard.com/en/Gallery/my/galery/xvDJdx45I0qH.jpg";
+	dataAnh[14] = "http://www.mypokecard.com/en/Gallery/my/galery/wtpGELYIf27J.jpg";
 
+	for (var i = 0; i < dataAnh.length; i++) {$("#content").append(gridAnh)};
+
+	for (var j = 0; j < dataAnh.length; j++) {	
+		$($("div#content .grid .front img")[j]).attr("src", dataAnh[j])};
+
+	$("#content").append($("#content").html());
+	
+	for (var n = 0; n < $(".card").length; n++) {
+		$($(".card")[n]).click(function(){
+			$(this).children('.back').css("transform", "rotatey(0deg)");
+			$(this).children('.front').css("transform", "rotatey(180deg)");
+			$("#abs").html($($(".card")[0]).children('.front').children().attr("src"));
+		});
+
+		
+	};
+
+})</script>
 </head>
 <body>
+<input id="abs" type="hidden"/>
 	<nav>
 		<p>Game card</p>
 	</nav>
@@ -48,168 +64,7 @@ max-width:150px;
 			</div>
 		</div>
 	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/6rEiCK7P0ikT.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/9nwlgRLFYN6u.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/mi4uTMDH6F.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/xSn8uGJNUc.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/xo8vuqQXvJAV.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/23BNFHwL3rgd.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/te2qRdAjAH69.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/GYpfAhdGw7A.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/OzFwWS0OjUvY.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/p9P56mUPzqX.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/8LMihSjOH5nn.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwc5.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/xFIklBVQO7Xv.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/xvDJdx45I0qH.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	<div class="grid">
-		<div class="card">
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/wtpGELYIf27J.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-	
 </div>
-<script>
 
-//	for (i=0; i< document.querySelectorAll(".card").length; i++){
-	document.querySelectorAll(".card")[0].addEventListener('click', function(){ 
-	xoay(0)});
-//	}
-	function xoay(i){
-	document.querySelectorAll(".card .back")[i].style.transform = "rotateY(0deg)";
-	document.querySelectorAll(".card .front")[i].style.transform = "rotateY(180deg)";
-}
-</script>
 </body>
 </html>
