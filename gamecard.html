@@ -6,12 +6,13 @@
 .card{position: relative;}
 img{max-width:150px;}
 .card .back{width: 200px;transform: rotateY(180deg);position: absolute; top: 0; left: 0;}
+.card .xoaytruoc{ transform: rotateY(0deg)}
+.card .xoaysau{ transform: rotateY(180deg)}
 .card .front, .card .back{transition: all 0.7s;backface-visibility: hidden;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>$(document).ready(function(){
 	var gridAnh = '<div class="grid"><div class="card" ><div class="front"><img src=""/></div><div class="back"><img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/></div></div></div>';
-
 	var dataAnh = [];
 	dataAnh[0] = "http://www.mypokecard.com/en/Gallery/my/galery/6rEiCK7P0ikT.jpg";
 	dataAnh[1] = "http://www.mypokecard.com/en/Gallery/my/galery/9nwlgRLFYN6u.jpg";
@@ -28,28 +29,31 @@ img{max-width:150px;}
 	dataAnh[12] = "http://www.mypokecard.com/en/Gallery/my/galery/xFIklBVQO7Xv.jpg";
 	dataAnh[13] = "http://www.mypokecard.com/en/Gallery/my/galery/xvDJdx45I0qH.jpg";
 	dataAnh[14] = "http://www.mypokecard.com/en/Gallery/my/galery/wtpGELYIf27J.jpg";
-
 	for (var i = 0; i < dataAnh.length; i++) {$("#content").append(gridAnh)};
-
 	for (var j = 0; j < dataAnh.length; j++) {	
 		$($("div#content .grid .front img")[j]).attr("src", dataAnh[j])};
-
 	$("#content").append($("#content").html());
 	
 	for (var n = 0; n < $(".card").length; n++) {
 		$($(".card")[n]).click(function(){
-			$(this).children('.back').css("transform", "rotatey(0deg)");
-			$(this).children('.front').css("transform", "rotatey(180deg)");
-			$("#abs").html($($(".card")[0]).children('.front').children().attr("src"));
-		});
-
-		
+			$(this).children('.back').toggleClass("xoaytruoc");
+			$(this).children('.front').toggleClass("xoaysau");			
+			bienkiemtra = $(this).children('.front').children().attr("src");
+			if (bienkiemtra != $("#abs").val()) {
+			$("#abs").val(bienkiemtra);
+			} else {
+			$(this).css("display", "none");
+			$('img[src="http://www.mypokecard.com/en/Gallery/my/galery/9aEQO1kA6Ael.jpg"]').parent().parent().css("display", "none");
+			}
+		});		
 	};
-
+	
+	
 })</script>
 </head>
 <body>
 <input id="abs" type="hidden"/>
+<input id="abs2" type="hidden"/>
 	<nav>
 		<p>Game card</p>
 	</nav>
