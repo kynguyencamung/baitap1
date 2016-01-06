@@ -22,7 +22,7 @@
 <button onclick="add()" style="background-color:orange">+</button><br/>
 
 <button onclick="hienthi(this.innerHTML)" style="width:70px">0</button>
-<button>.</button>
+<button onclick="hienthi(this.innerHTML)">.</button>
 <button onclick="ketqua()" style="background-color:orange">=</button><br/>
 <input type="hidden" id="hidden1"><input type="hidden" id="hidden2">
 <script>
@@ -50,8 +50,7 @@ if (document.getElementById("hidden2").value == "*"){
 }
 if (document.getElementById("hidden2").value == "/"){
 	document.getElementById("text").value = 
-	+document.getElementById("hidden1").value
-		/
+	+document.getElementById("hidden1").value/
 	+document.getElementById("text").value
 }
 if (document.getElementById("hidden2").value == "%"){
@@ -86,9 +85,9 @@ function mod(){
 	document.getElementById("text").value = "";
 	document.getElementById("hidden2").value = "%";
 }
-
 function hienthi(x){
-	document.getElementById("text").value = x;
+	y = document.getElementById("text").value;
+	document.getElementById("text").value = y+x;
 }
 function set(z){
 	document.getElementById("text").value = z;
