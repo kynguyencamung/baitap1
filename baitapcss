@@ -74,20 +74,6 @@ body {background: #fff;}
 
 ]]>
 </style>
-<script type="text/javascript">
-function Scroll(){
-	var top = document.getElementById('nav');
-	var ypos = window.pageYOffset;
-	if (yops > 2) {
-		top.style.opacity = "0";
-	}
-	else {
-		top.style.opacity = "1";
-	}
-}
-widow.addEventListenner("scroll",scroll);
-</script>
-
 </head>
 <body>
 
