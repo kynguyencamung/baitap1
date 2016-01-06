@@ -1,3 +1,4 @@
+
 <html>
 <head>
 <style>
@@ -5,7 +6,7 @@
 .grid{float: left;width: 150px;height: 210px;margin: 15px;border:1px solid red;}
 .card{position: relative;}
 img{max-width:150px;}
-.card .back{width: 200px;transform: rotateY(180deg);position: absolute; top: 0; left: 0;}
+.card .front{width: 200px;transform: rotateY(180deg);position: absolute; top: 0; left: 0;}
 .card .xoaytruoc{ transform: rotateY(0deg)}
 .card .xoaysau{ transform: rotateY(180deg)}
 .card .front, .card .back{transition: all 0.7s;backface-visibility: hidden;}
@@ -33,29 +34,42 @@ img{max-width:150px;}
 	for (var j = 0; j < dataAnh.length; j++) {	
 		$($("div#content .grid .front img")[j]).attr("src", dataAnh[j])};
 	$("#content").append($("#content").html());
-	
-	for (var n = 0; n < $(".card").length; n++) {
-		$($(".card")[n]).click(function(){
-			$(this).children('.back').toggleClass("xoaytruoc");
-			$(this).children('.front').toggleClass("xoaysau");			
-			bienkiemtra = $(this).children('.front').children().attr("src");
-			if (bienkiemtra != $("#abs").val()) {
-			$("#abs").val(bienkiemtra);
-			} else {
-			$(this).css("display", "none");
-			$('img[src="http://www.mypokecard.com/en/Gallery/my/galery/9aEQO1kA6Ael.jpg"]').parent().parent().css("display", "none");
-			}
-		});		
-	};
-	
-	
+		
+	$(".card").click(function(){
+				//xoa class xoay trong tinh trang an, va them class xoay vao the moi
+			//if ($(".xoaytruoc").length == 2) {
+			//	$(".card").children('.front').removeClass("xoaytruoc");
+			//	$(".card").children('.back').removeClass("xoaysau");
+			//	$(this).children('.front').toggleClass("xoaytruoc");
+			//	$(this).children('.back').toggleClass("xoaysau");		
+			//}
+			//else { //xoay
+				$(this).children('.front').toggleClass("xoaytruoc");
+				$(this).children('.back').toggleClass("xoaysau");	
+			//}
+			setTimeout(function () {					
+				if ($(".xoaytruoc").length == 2) {
+					if ($($(".xoaytruoc")[0]).find('img').attr("src") == $($(".xoaytruoc")[1]).find('img').attr("src")) {
+						$(".xoaytruoc").parent().css("display", "none");
+						$(".card").children('.front').removeClass("xoaytruoc");
+						$(".card").children('.back').removeClass("xoaysau");
+					}else { 
+						$(".card").children('.front').removeClass("xoaytruoc");
+						$(".card").children('.back').removeClass("xoaysau");
+					}
+				}
+			},1000);
+	});	
+	if($(".front").hasClass("xoaytruoc") == false){
+		alert("yOu win !!!")
+	}
 })</script>
 </head>
 <body>
 <input id="abs" type="hidden"/>
 <input id="abs2" type="hidden"/>
 	<nav>
-		<p>Game card</p>
+		<p>Game card</p>	
 	</nav>
 <div id="content">
 	<div class="grid">
