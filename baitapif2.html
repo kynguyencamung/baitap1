@@ -1,37 +1,110 @@
-<body>
-<p id="a"> bai tap dom </p>
-<p id="b"> bai tap document object model </p>
-<p id="c"> bai tap document object model 2</p>
 
-<p id="changefontsize" onclick="changefontsize()">changefontsize</p>
-<p id="upfontsize" onclick="upfontsize()">upfontsize</p>
-<p id="downfontsize">downfontsize</p>
-<p id="changecolor" onclick="changecolor()">changecolor</p>
-<p id="changebg" onclick="changebg()">changebg</p>
-<p id="copypate" onclick="copypate()">copypate</p>
+
+
+	//bai tap phan if 2
+
+/*
+//bai 5:
+
+<form method="post" action"">
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="button" onclick="validate(); checkTrueFalse()"/>
+<p id="hhh"></p>
+<input type="button" onclick="kiemtra()"/>
+</form>
 
 <script>
-a = document.getElementById("a");
-b = document.getElementById("b");
-c = document.getElementById("c");
-function changefontsize(){
-	a.style.fontSize = "30px";
-}
-//chua lam duoc phan nay
-function upfontsize(){
-	a.style.fontSize = a.style.fontSize + "110%";
-}
-//
-function changecolor(){
-	a.style.color = "blue";
-	b.style.color = "yellow";
-	c.style.color = "red";
-}
-function changebg(){
-	document.body.style.backgroundColor = "green";
-}
-function copypate(){
-	a.innerHTML = b.innerHTML;
-}
+	//add event 	" 
+	//document.forms[0].elements[3].addEventListener("click",
+	//function (){ return validate(); checkTrueFalse()});
+
+data = [];
+	function validate(){
+	user = document.forms[0].elements[0].value;
+	pass = document.forms[0].elements[1].value;
+	repass = document.forms[0].elements[2].value;
+	
+	if (user == ""){
+		alert ("chua nhap ten?");
+		return false;
+	}
+	if (pass == ""){
+		alert("chua nhap pass?");
+		return false;
+	}
+	if (pass != repass){
+		alert("repass khong dung?");
+		return false;
+	}
+	return true;
+	
+	}
+	function checkTrueFalse() {
+	
+	data = data.concat(validate());
+	document.getElementsByTagName("p")[0].innerHTML = data.valueOf();
+	}
+	function kiemtra(){
+		for (i=0; i< data.length ; i++){
+			if(data[i] == true) {
+			document.write(i);
+			break;
+		}
+		}
+	}
+	
+
 </script>
-</body>
+	
+//bai3:
+x = 6 ;
+if (x>=0 && x<=10) {
+	if (x >= 0 && x < 3.9) {
+		document.write("diem F");
+		}
+	if (x >= 4 && x < 5.4){
+		document.write("diem D");
+		}
+	if (x >= 5.5 && x < 6.9){
+		document.write("diem c");
+		}
+	if (x >= 7 && x < 8.4){
+		document.write("diem B");
+		}
+	if (x>= 8.5 && x<= 10) {
+		document.write("diem A");
+		}
+}
+
+//bai2:
+string = "tghrtgydrtsdrtgdrtgrtgsdte4t";
+
+if (typeof string == "number") {
+string = string.toString();
+} 
+	if (string.length < 10) {
+	document.write(string);
+	} else {
+	document.write(string.slice(0,10) + "...");
+	}
+	
+//bai 1: date..	
+	//bai1:
+	now = new Date();
+	day = now.getDate();
+	month = now.getMonth() + 1;
+	year = now.getFullYear();
+	document.write(now);
+	if(month <3 ){
+		document.write("xuan, at: " + day +":"+ month +":"+ year);
+	} else if(month >3 && month <6 ){
+		document.write("ha, at: " + day +":"+ month +":"+ year);
+	} else if(month >6 && month <9 ){
+		document.write("thu, at: " + day +":"+ month +":"+ year);
+	} else {
+		document.write("dong, at: " + day +":"+ month +":"+ year);
+	}
+
+	
