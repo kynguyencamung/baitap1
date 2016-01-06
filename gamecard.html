@@ -1,8 +1,5 @@
-
-<html>
-<head>
-<style>
-#content{width:1500px;height:1000px;background: #DCE7DC;}
+<html><head><style>
+#content{width:1900px;height:1000px;background: #DCE7DC;}
 .grid{float: left;width: 150px;height: 210px;margin: 15px;border:1px solid red;}
 .card{position: relative;}
 img{max-width:150px;}
@@ -13,7 +10,7 @@ img{max-width:150px;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>$(document).ready(function(){
-	var gridAnh = '<div class="grid"><div class="card" ><div class="front"><img src=""/></div><div class="back"><img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/></div></div></div>';
+	var gridAnh = '<div class="grid"><div class="card"><div class="front"><img/></div><div class="back"><img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/></div></div></div>';
 	var dataAnh = [];
 	dataAnh[0] = "http://www.mypokecard.com/en/Gallery/my/galery/6rEiCK7P0ikT.jpg";
 	dataAnh[1] = "http://www.mypokecard.com/en/Gallery/my/galery/9nwlgRLFYN6u.jpg";
@@ -30,59 +27,27 @@ img{max-width:150px;}
 	dataAnh[12] = "http://www.mypokecard.com/en/Gallery/my/galery/xFIklBVQO7Xv.jpg";
 	dataAnh[13] = "http://www.mypokecard.com/en/Gallery/my/galery/xvDJdx45I0qH.jpg";
 	dataAnh[14] = "http://www.mypokecard.com/en/Gallery/my/galery/wtpGELYIf27J.jpg";
-	for (var i = 0; i < dataAnh.length; i++) {$("#content").append(gridAnh)};
-	for (var j = 0; j < dataAnh.length; j++) {	
-		$($("div#content .grid .front img")[j]).attr("src", dataAnh[j])};
-	$("#content").append($("#content").html());
-		
-	$(".card").click(function(){
-				//xoa class xoay trong tinh trang an, va them class xoay vao the moi
-			//if ($(".xoaytruoc").length == 2) {
-			//	$(".card").children('.front').removeClass("xoaytruoc");
-			//	$(".card").children('.back').removeClass("xoaysau");
-			//	$(this).children('.front').toggleClass("xoaytruoc");
-			//	$(this).children('.back').toggleClass("xoaysau");		
-			//}
-			//else { //xoay
-				$(this).children('.front').toggleClass("xoaytruoc");
-				$(this).children('.back').toggleClass("xoaysau");	
-			//}
-			setTimeout(function () {					
-				if ($(".xoaytruoc").length == 2) {
-					if ($($(".xoaytruoc")[0]).find('img').attr("src") == $($(".xoaytruoc")[1]).find('img').attr("src")) {
-						$(".xoaytruoc").parent().css("display", "none");
-						$(".card").children('.front').removeClass("xoaytruoc");
-						$(".card").children('.back').removeClass("xoaysau");
-					}else { 
-						$(".card").children('.front').removeClass("xoaytruoc");
-						$(".card").children('.back').removeClass("xoaysau");
-					}
-				}
-			},1000);
-	});	
-	if($(".front").hasClass("xoaytruoc") == false){
-		alert("yOu win !!!")
-	}
+	data = dataAnh.concat(dataAnh); //dup anh
+	data.sort(function() {return 0.5 - Math.random();}); //xao tron anh
+	for (var i = 0; i < data.length; i++) {$("#content").append(gridAnh)}; //gán những code lặp lại vào html content
+	for (var j = 0; j < data.length; j++) {$($("div#content .grid .front img")[j]).attr("src", data[j])}; //gán ảnh vào html
+	$(".card").click(function(){ //gán event click vào các div chứa ảnh
+	$(this).children('.front').toggleClass("xoaytruoc");
+	$(this).children('.back').toggleClass("xoaysau");	
+	setTimeout(function () {	// xóa ảnh nếu thấy trùng				
+		if ($(".xoaytruoc").length == 2) {
+			if ($($(".xoaytruoc")[0]).find('img').attr("src") == $($(".xoaytruoc")[1]).find('img').attr("src")) {
+				$(".xoaytruoc").parent().css("display", "none");
+				$(".card").children('.front').removeClass("xoaytruoc");
+				$(".card").children('.back').removeClass("xoaysau");
+			}else { $(".card").children('.front').removeClass("xoaytruoc");$(".card").children('.back').removeClass("xoaysau");}
+			if ($("[style='display: none;']").length == data.length) {alert("you win!.. press ok -> PLAY again?"); location.reload() };
+	}},700);
+	});
 })</script>
-</head>
-<body>
+</head><body>
 <input id="abs" type="hidden"/>
 <input id="abs2" type="hidden"/>
-	<nav>
-		<p>Game card</p>	
-	</nav>
-<div id="content">
-	<div class="grid">
-		<div class="card" >
-			<div class="front">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/9aEQO1kA6Ael.jpg"/>
-			</div>
-			<div class="back">
-				<img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/>
-			</div>
-		</div>
-	</div>	
-</div>
-
-</body>
-</html>
+	<nav><p>Game card:</p></nav>
+<div id="content"></div>
+</body></html>
