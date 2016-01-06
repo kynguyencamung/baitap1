@@ -1,1 +1,129 @@
-aaaaaaaa
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<HTML expr:dir='data:blog.languageDirection'>
+<head>
+   <b:skin><![CDATA[
+</b:skin>
+
+<style>
+body {background: #fff;}
+.main {height:1900px; width: 980px;margin: 0 auto;}
+
+.innernav {width: 980px;margin: 0 auto;}
+.innernav .sf-menu li{
+    float: left;
+    width: 19%;
+    height: 40px;
+    border: dotted;
+    background: #C5C5D8;
+	}
+@keyframes xoay {
+	from {top:400px;left:200px;}
+	to {top:10px;left: 1100px;}
+	10% {top: 80px;left: 220px;transform:rotate(10deg);}
+	20% {top: 80px;left: 260px;transform:rotate(20deg);}
+	30% {top: 90px;left: 320px;transform:rotate(30deg);}
+	40% {top: 80px;left: 400px;transform:rotate(50deg);}
+	50% {top: 150px;left: 920px;transform:rotate(180deg);opacity:0.8;}
+	60% {top: 180px;left: 720px;transform:rotate(500deg);}
+	60% {top: 180px;left: 720px;transform:rotate(1160deg);opacity:0.1;}	
+	70% {top: 220px;left: 1000px;transform:rotate(60deg);transform: scale(1.4);}
+	80% {transform: scale(0.1);}
+	90% {transform: translate(0, 55px);transform: scale(10.1);}
+	100% {transform: translate(565px, -55px);}
+}
+.quabong a img {
+    position: absolute;
+    top: 70px;
+    left: 200px;
+	animation: xoay 5s linear infinite;
+	animation-delay:3s;
+	transition-delay:0.1s;
+	transition: all 5s linear;
+	 
+}
+.quabong a:hover img {
+	display: none;
+	/*transform: scale(5.5);
+	transform: translate(0, 750px);*/
+}
+
+.thumon img {
+	float: right;
+	transition-delay:0.1s;
+	transition: all 1s linear;
+}
+.thumon:hover img {
+	float: right;
+    margin-top: 200px;
+	/*transform: skewX(140deg);*/
+	transform: translate(0, 50px);
+}
+@keyframes chuky {
+	
+	25% {bottom: 40px; right: 670px; opacity: 0.5;}
+	50% {bottom: 140px; right: 970px; opacity: 0;}
+	100% {opacity: 0;}
+}
+.chuky {
+	animation: chuky 11s linear infinite;
+	position: fixed;
+	bottom: 40px;
+	right: 70px;
+}
+
+]]>
+</style>
+<script type="text/javascript">
+function Scroll(){
+	var top = document.getElementById('nav');
+	var ypos = window.pageYOffset;
+	if (yops > 2) {
+		top.style.opacity = "0";
+	}
+	else {
+		top.style.opacity = "1";
+	}
+}
+widow.addEventListenner("scroll",scroll);
+</script>
+
+</head>
+<body>
+
+    <nav class='navix' id='nav'>
+<div class='innernav'>
+<a class='hidden' href='#' id='mobilenav'>Menu</a>
+
+<ul class='sf-menu' id='menunav' itemscope='' itemtype='http://schema.org/SiteNavigationElement'>
+  <li><a class='home' expr:href='data:blog.homepageUrl'>Home</a></li>
+  <li><a href='#'>About</a></li>
+  <li><a href='#'>Archive</a></li>
+  <li><a href='#'>Comments</a></li>
+  <li><a href='#'>With Sub Menu</a></li>
+</ul>
+ <div id='searchnya'>
+<form action='/search' id='ajax-search-form'>
+    <input name='q' onblur='if (this.value == &quot;&quot;) {this.value = &quot;Text to search...&quot;;}' onfocus='if (this.value == &quot;Text to search...&quot;) {this.value = &quot;&quot;;}' type='text' value='Text to search...'/>
+<button title='Search' type='submit'>Search</button>
+ </form>
+</div>
+<div class='tombolsrc'/> 
+</div>
+<div class='navbg'/>
+</nav>
+
+<div class='main'>
+<div class="quabong">
+<a href="#"><img src='http://rocketdock.com/images/screenshots/soccer.png'/></a>
+</div>
+<div class="thumon">
+<a href="#"><img src='http://img.f1.thethao.vnecdn.net/2015/12/10/ceni6-5807-1449738019.jpg'/></a>
+</div>
+</div>
+<div class="chuky">
+<P>Design by : KY NGUYEN CAM UNG - CLASS: TECH MASTER (NODE JS - 02)</P>
+</div>
+<b:section id='crosscol'/>
+</body>
+</HTML>
