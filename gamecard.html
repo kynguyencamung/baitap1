@@ -10,6 +10,15 @@ img{max-width:150px;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>$(document).ready(function(){
+	function chaygio(){
+	var gio = new Date();
+	demgio = gio.getHours() + ":" + gio.getMinutes() + ':' + gio.getSeconds();
+	$("nav > span").html(demgio); 
+	if (gio.getSeconds() == 0) {alert("het gio");location.reload()};
+	setTimeout(function () {chaygio();},1000)
+	
+	}; 
+	chaygio();
 	var gridAnh = '<div class="grid"><div class="card"><div class="front"><img/></div><div class="back"><img src="http://www.mypokecard.com/en/Gallery/my/galery/Iu0uDV7MAwaF.jpg"/></div></div></div>';
 	var dataAnh = [];
 	dataAnh[0] = "http://www.mypokecard.com/en/Gallery/my/galery/6rEiCK7P0ikT.jpg";
@@ -48,6 +57,6 @@ img{max-width:150px;}
 </head><body>
 <input id="abs" type="hidden"/>
 <input id="abs2" type="hidden"/>
-	<nav><p>Game card:</p></nav>
+	<nav><p>Game card:</p><span></span></nav>
 <div id="content"></div>
 </body></html>
