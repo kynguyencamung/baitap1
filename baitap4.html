@@ -1,9 +1,6 @@
 
-<meta charset="utf-8" />
 
-<script>
-
-
+/* bai7 cach 1:
 
 
 function person(firstname, lastname, age) {
@@ -26,7 +23,8 @@ parent.say = aboutMe;
 teacher.say();
 student.say();
 parent.say();
-/* bai7 cach 1:
+
+
 //cach 2
 var teacher = {
 	firstName: "kim",
@@ -68,7 +66,7 @@ data = [2,5,7,89,4,3,1]
 data = data.sort().slice(0,1);
 document.write(data);
 
-//bai4 co 2 cach
+//bai4 viết hoa từ đầu tiên: co 2 cach
 <p>demo trong video viết trực tiếp.</p>
 
 ss1 = document.getElementsByTagName('p');
@@ -76,6 +74,28 @@ ss1[0].innerHTML = ss1[0].innerHTML.charAt(0).toUpperCase() + ss1[0].innerHTML.s
 
 //cach 2
 //ss1[0].innerHTML = ss1[0].innerHTML.slice(0,1).toUpperCase() + ss1[0].innerHTML.slice(1);
+
+bai 3:
+<p>Demo trong video viết trực tiếp thẻ vào trong tài liệu HTML chỉ để giúp các bạn tập trung được vào code javascript. Trên thực tế phải viết đầy đủ các thẻ html, head, body như thường lệ.
+Lệnh return dùng để trả về kết quả và sau khi đã return thì các lệnh nằm sau nó sẽ không được thực hiện nữa.</p>
+<script>
+ss1 = document.getElementsByTagName('p');
+ss1[0].innerHTML = ss1[0].innerHTML.slice(0,10).concat("...");
+</script>
+
+bai 2:
+<script>
+function binhPhuong() {
+x = document.getElementById("x1").value;
+y = document.getElementById("x2").value;
+z = document.getElementById("x3").value;
+document.getElementById("yy").value = (3*x+2*y-z)*(3*x+2*y-z);
+</script>
+<input type= "text" id="x1" value="2">
+<input type= "text" id="x2" value="4">
+<input type= "text" id="x3" value="6">
+<input type="button" onclick="binhPhuong()" value="click tinh binh phuong">
+<input type="text" id="yy">
+
 */
 
-</script>
